@@ -1,0 +1,29 @@
+insert into authors (name, birth_year, country) values
+  ('j. k. rowling', 1965, 'uk'),
+  ('george orwell', 1903, 'united kingdom');
+select * from authors;
+
+insert into members (name, email) values
+  ('alice kumar', 'alice@example.com'),
+  ('ravi singh', 'ravi@example.com');
+select * from members;
+
+insert into books (title) values ('unregistered title');
+select * from books;
+
+insert into loans (book_id, member_id, loan_date, return_date)
+values (1, 1, '2025-09-01', null);
+select * from loans;
+
+insert into books (title, isbn, published_year, author_id) values
+  ('1984', '9780451524935', 1949, 2),
+  ('hp and the philosopher''s stone', '9780747532699', 1997, 1);
+select * from books;
+
+update books
+set copies = copies + 1
+where published_year < 2000;
+select * from books;
+
+delete from loans where loan_id = 5;
+select * from loans;
